@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<script src="https://curtinaz.github.io/keep-params/keep-params.js"></script>
 
 	<meta charset="UTF-8">
 	<link data-optimized="2" rel="stylesheet" href="wp-content/litespeed/css/a92031757fb837cf4be8f36cabcb60f91242.css?ver=c4bd7" />
@@ -239,6 +238,34 @@
 			<p>Este site não é afiliado ao Google ou a qualquer entidade do Google. Depois que você sair do Google, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas e resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam. Sinta-se à vontade para falar conosco em horário comercial de Segunda a Sextas das 09h00 às 18h00. Lemos e respondemos todas as mensagens por ordem de chegada.</p>
 		</div>
 	</footer>
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const prefixes = ["https://520potencializando.github.io/IgorSites/SiteIgor/pv.html"];
+
+        function getAllParams(url) {
+            const urlObj = new URL(url);
+            let paramString = "";
+
+            // Iterando sobre todos os parâmetros da URL
+            for (const [key, value] of urlObj.searchParams) {
+                paramString += `${paramString ? '&' : ''}${key}=${value}`;
+            }
+
+            return paramString;
+        }
+
+        const links = document.querySelectorAll("a");
+
+        links.forEach(link => {
+            const hasPrefix = prefixes.some(prefix => link.href.includes(prefix));
+            if (hasPrefix) {
+                const params = getAllParams(window.location.href);
+                const separator = link.href.includes("?") ? "&" : "?";
+                link.href += `${separator}${params}`;
+            }
+        });
+    });
+</script>
   
 	<script>
 
